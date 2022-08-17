@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-9ndce&l@l+tiq0&hpd^9p!xki()!dka-l+ad+$cn)48v-%(ybr
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["rtcvideocall.pythonanywhere.com", "django-videocall.herokuapp.com", "localhost"]
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -59,7 +59,7 @@ ROOT_URLCONF = 'videocall.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -125,12 +125,12 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # For Local Development
-# STATICFILES_DIRS = [
-#     BASE_DIR / "static",
-# ]
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
 
 # For Deployments
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
